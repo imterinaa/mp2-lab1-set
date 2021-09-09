@@ -11,16 +11,28 @@
 static const int FAKE_INT = -1;
 static TBitField FAKE_BITFIELD(1);
 
-TBitField::TBitField(int len)
-{
+TBitField::TBitField(int len) {
+    MemLen = (len - 1) / 32 + 1;
+    for (int i = 0; i < MemLen; i++) {
+        pMem[i] = 0;
+    }
 }
 
-TBitField::TBitField(const TBitField &bf) // конструктор копирования
+TBitField::TBitField(const TBitField& bf) // конструктор копирования
 {
+    MemLen = bf.MemLen;
+    BitLen = bf.BitLen;
+    pMem = new TELEM[MemLen];
+    for (int i = 0; i < MemLen; i++) {
+        pMem[i] = bf.pMem[i];
+    }
+
+
 }
 
 TBitField::~TBitField()
 {
+    delete[] pMem;
 }
 
 int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
@@ -37,7 +49,7 @@ TELEM TBitField::GetMemMask(const int n) const // битовая маска дл
 
 int TBitField::GetLength(void) const // получить длину (к-во битов)
 {
-  return FAKE_INT;
+    return FAKE_INT;
 }
 
 void TBitField::SetBit(const int n) // установить бит
@@ -50,32 +62,43 @@ void TBitField::ClrBit(const int n) // очистить бит
 
 int TBitField::GetBit(const int n) const // получить значение бита
 {
-  return FAKE_INT;
+    return FAKE_INT;
 }
 
 // битовые операции
 
-TBitField& TBitField::operator=(const TBitField &bf) // присваивание
+TBitField& TBitField::operator=(const TBitField& bf) // присваивание
+{
+
+    if (&bf == this)
+        return *this;
+    BitLen = bf.BitLen;
+    if (MemLen != bf.MemLen) {
+        delete[] pMem;
+        pMem = new TELEM[MemLen];
+    }
+    for (int i = 0; i < MemLen; i++) {
+        pMem[i] = bf.pMem[i];
+    }
+    return *this;
+}
+
+int TBitField::operator==(const TBitField& bf) const // сравнение
+{
+    return FAKE_INT;
+}
+
+int TBitField::operator!=(const TBitField& bf) const // сравнение
+{
+    return FAKE_INT;
+}
+
+TBitField TBitField::operator|(const TBitField& bf) // операция "или"
 {
     return FAKE_BITFIELD;
 }
 
-int TBitField::operator==(const TBitField &bf) const // сравнение
-{
-  return FAKE_INT;
-}
-
-int TBitField::operator!=(const TBitField &bf) const // сравнение
-{
-  return FAKE_INT;
-}
-
-TBitField TBitField::operator|(const TBitField &bf) // операция "или"
-{
-    return FAKE_BITFIELD;
-}
-
-TBitField TBitField::operator&(const TBitField &bf) // операция "и"
+TBitField TBitField::operator&(const TBitField& bf) // операция "и"
 {
     return FAKE_BITFIELD;
 }
@@ -87,12 +110,12 @@ TBitField TBitField::operator~(void) // отрицание
 
 // ввод/вывод
 
-istream &operator>>(istream &istr, TBitField &bf) // ввод
+istream& operator>>(istream& istr, TBitField& bf) // ввод
 {
     return istr;
 }
 
-ostream &operator<<(ostream &ostr, const TBitField &bf) // вывод
+ostream& operator<<(ostream& ostr, const TBitField& bf) // вывод
 {
     return ostr;
 }
