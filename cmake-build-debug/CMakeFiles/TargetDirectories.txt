@@ -1,0 +1,14 @@
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/src/CMakeFiles/set.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/samples/CMakeFiles/rebuild_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/samples/CMakeFiles/edit_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/samples/CMakeFiles/sample_prime_numbers.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/gtest/CMakeFiles/rebuild_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/gtest/CMakeFiles/edit_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/gtest/CMakeFiles/gtest.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/Users/alinaterina/CLionProjects/mp2-lab1-set1/cmake-build-debug/test/CMakeFiles/test_set.dir
