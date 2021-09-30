@@ -102,7 +102,7 @@ TBitField& TBitField::operator=(const TBitField &bf) // присваивание
         }
         for (int i = 0; i < MemLen; i++)
             pMem[i] = bf.pMem[i];
-        return *this;
+        return *this ;
     }
 
     else return *this;

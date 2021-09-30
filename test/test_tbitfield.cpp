@@ -18,7 +18,7 @@ TEST(TBitField, new_bitfield_is_set_to_zero)
 {
   TBitField bf(100);
 
-  int sum = 0;
+  int sum = 0 ;
   for (int i = 0; i < bf.GetLength(); i++)
   {
     sum += bf.GetBit(i);
