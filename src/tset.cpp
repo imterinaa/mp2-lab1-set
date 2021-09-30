@@ -24,7 +24,7 @@ TSet::TSet(const TSet &s) : BitField(s.BitField)
 }
 
 // конструктор преобразования типа
-TSet::TSet(const TBitField &bf) : BitField(-1)
+TSet::TSet(const TBitField &bf) : MaxPower(bf.GetLength()),BitField(bf)
 {
     return ;
 }
@@ -72,7 +72,7 @@ TSet& TSet::operator=(const TSet &s) // присваивание
 
 int TSet::operator==(const TSet &s) const // сравнение
 {
-    if ( (MaxPower==s.MaxPower)&&(BitField==s.BitField)){
+    if ( (BitField==s.BitField)){
         return 1;
     }
     else return 0;
@@ -141,7 +141,7 @@ ostream& operator<<(ostream &ostr, const TSet &s) // вывод
     int l=s.GetMaxPower();
     for (int i=0; i<l; i++) {
         if (s.IsMember(i) != 0)
-            ostr << i;
+            ostr << i<< ",  ";
     }
     return ostr;
 }

@@ -165,7 +165,7 @@ int TBitField::operator!=(const TBitField &bf) const // сравнение
 TBitField TBitField::operator|(const TBitField &bf) // операция "или"
 {
     int l = BitLen;
-    if (BitLen == bf.BitLen)
+    if (BitLen < bf.BitLen)
         l = bf.BitLen;
     TBitField Field(l);
     for (int i = 0; i < Field.MemLen; i++)
@@ -176,7 +176,7 @@ TBitField TBitField::operator|(const TBitField &bf) // операция "или"
 TBitField TBitField::operator&(const TBitField &bf) // операция "и"
 {
     int l = BitLen;
-    if (BitLen == bf.BitLen)
+    if (BitLen < bf.BitLen)
         l = bf.BitLen;
     TBitField Field(l);
     for (int i = 0; i < Field.MemLen; i++)
